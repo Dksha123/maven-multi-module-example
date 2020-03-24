@@ -20,7 +20,8 @@ steps{
 
 sh '/opt/maven/bin/mvn clean package -Dmaven.test.skip=true'
 
-}}
+}
+}
 
 stage('RELEASE') {
 
@@ -38,4 +39,6 @@ stage('GIT PUSH') {
 
 }
 }
-}}
+}
+ }
+}
