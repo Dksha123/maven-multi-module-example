@@ -10,7 +10,7 @@ stage('SCM'){
 
 steps{
 
-    checkout([$class: 'GitSCM', branches: [[name: '*/release']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/samridhi97/maven-multi-module-example.git']]])
+    checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/samridhi97/maven-multi-module-example.git']]])
 
 } }
 
@@ -33,9 +33,9 @@ sh '/opt/maven/bin/mvn --batch-mode release:clean release:prepare release:perfor
 }
 stage('GIT PUSH') {
     steps{
-    sshagent(credentials: ['gits']) {
+
         sh 'git push https://samridhi97:github97@github.com/samridhi97/maven-multi-module-example.git HEAD:release'
-}
+
 }
 }
 }}
