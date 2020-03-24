@@ -28,7 +28,7 @@ stage('RELEASE') {
 
 steps{
 
-sh '/opt/maven/bin/mvn --batch-mode release:clean release:prepare release:perform -DreleaseVersion=5.1 -DdevelopmentVersion=2.4-SNAPSHOT'
+sh '/opt/maven/bin/mvn --batch-mode release:clean release:prepare release:perform'
 
 }
     
