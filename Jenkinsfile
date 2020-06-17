@@ -36,7 +36,7 @@ sh '/opt/maven/bin/mvn --batch-mode release:clean release:prepare release:perfor
 stage('GIT PUSH') {
     steps{
     
-        sh 'git push https://samridhi97:github97@github.com/samridhi97/maven-multi-module-example.git HEAD:master'
+        sh 'git push https://github.com/Dksha123/maven-multi-module-example HEAD:master'
 
 }
 }
